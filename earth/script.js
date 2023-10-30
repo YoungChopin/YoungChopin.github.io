@@ -62,10 +62,10 @@ document.getElementById("scene-container").addEventListener('mouseup', () => {
 
 const earthRotationSpeed = 0.02; // Increased rotation speed
 
-const earthOrbitSpeed = 0.0005;
+const earthOrbitSpeed = 0.0001;
 const earthOrbitRadius = 40;
 
-const moonOrbitSpeed = 0.005;
+const moonOrbitSpeed = 0.001;
 const moonOrbitRadius = 15;
 
 const animate = () => {
