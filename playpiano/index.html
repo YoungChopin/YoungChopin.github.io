@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+        html {
+            height: 100%;
+        }
+
+        #flex {
+            height: 100%;
+            grid-template-rows: repeat(3, 1fr);
+            display: grid;
+            align-items: center;
+            justify-items: center;
+            /* justify-content: space-evenly;
+            align-content: space-between; */
+            background-color: #111;
+        }
+
+        .key {
+            float: left;
+            position: relative;
+        }
+
+        .white {
+            height: 14.4vw;
+            width: 3.8095238095vw;
+            z-index: 1;
+            border-top: 0.12vw solid #AAAAAA;
+            border-bottom: 0.12vw solid #AAAAAA;
+            border-left: 0.12vw solid #AAAAAA;
+            background-color: #CBCBCB;
+        }
+
+        .black {
+            height: 7.92vw;
+            width: 2.0952380952vw;
+            z-index: 2;
+            border: 0.12vw solid #000000;
+            background-color: #222222;
+        }
+
+        .a,
+        .b,
+        .d,
+        .e,
+        .g,
+        .black {
+            margin: 0 0 0 -1.1676190476vw;
+        }
+
+        #keyboard>.note:last-child {
+            border-right: 0.12vw solid #AAAAAA;
+        }
+
+        #credit {
+            top: 0;
+            left: 0;
+            position: absolute;
+            font-size: x-small;
+            color: white;
+        }
+    </style>
+</head>
+
+<body style="height: 100%; width: 100%">
+    <div id="flex">
+        <div id="sheet" style="width: min-content; background-color: white;">
+            <div id="treble"></div>
+        </div>
+        <div id="middle"></div>
+        <div id="keyboard">
+            <div class="key white c" data-note="C3"></div>
+            <div class="key black c_sharp" data-note="C#3"></div>
+            <div class="key white d" data-note="D3"></div>
+            <div class="key black d_sharp" data-note="D#3"></div>
+            <div class="key white e" data-note="E3"></div>
+            <div class="key white f" data-note="F3"></div>
+            <div class="key black f_sharp" data-note="F#3"></div>
+            <div class="key white g" data-note="G3"></div>
+            <div class="key black g_sharp" data-note="G#3"></div>
+            <div class="key white a" data-note="A3"></div>
+            <div class="key black a_sharp" data-note="A#3"></div>
+            <div class="key white b" data-note="B3"></div>
+            <div class="key white c" data-note="C4"></div>
+            <div class="key black c_sharp" data-note="C#4"></div>
+            <div class="key white d" data-note="D4"></div>
+            <div class="key black d_sharp" data-note="D#4"></div>
+            <div class="key white e" data-note="E4"></div>
+            <div class="key white f" data-note="F4"></div>
+            <div class="key black f_sharp" data-note="F#4"></div>
+            <div class="key white g" data-note="G4"></div>
+            <div class="key black g_sharp" data-note="G#4"></div>
+            <div class="key white a" data-note="A4"></div>
+            <div class="key black a_sharp" data-note="A#4"></div>
+            <div class="key white b" data-note="B4"></div>
+            <div class="key white c" data-note="C5"></div>
+            <div class="key black c_sharp" data-note="C#5"></div>
+            <div class="key white d" data-note="D5"></div>
+            <div class="key black d_sharp" data-note="D#5"></div>
+            <div class="key white e" data-note="E5"></div>
+            <div class="key white f" data-note="F5"></div>
+            <div class="key black f_sharp" data-note="F#5"></div>
+            <div class="key white g" data-note="G5"></div>
+            <div class="key black g_sharp" data-note="G#5"></div>
+            <div class="key white a" data-note="A5"></div>
+            <div class="key black a_sharp" data-note="A#5"></div>
+            <div class="key white b" data-note="B5"></div>
+        </div>
+    </div>
+    <div id="credit">
+        <div>Play either with the Mouse or with the keys from A to L</div>
+    </div>
+    <script type="module" src="client.js"></script>
+</body>
+
+</html>
