@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FJP</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            border-radius: 15px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.5rem;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>❤️</h1>
+    <p id="timer">Lädt...</p>
+</div>
+
+<script>
+    // Feste Startzeit (Jahr, Monat-1, Tag, Stunde, Minute, Sekunde)
+    const startDate = new Date(2026, 0, 19, 19, 45, 0); // Beispiel: 15. Mai 2022
+
+    function updateTimer() {
+        const now = new Date();
+        let diff = now - startDate; // Differenz in Millisekunden
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        diff -= days * (1000 * 60 * 60 * 24);
+
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        diff -= hours * (1000 * 60 * 60);
+
+        const minutes = Math.floor(diff / (1000 * 60));
+        diff -= minutes * (1000 * 60);
+
+        const seconds = Math.floor(diff / 1000);
+
+        document.getElementById('timer').textContent =
+            `${days} Tage, ${hours} Stunden, ${minutes} Minuten, ${seconds} Sekunden`;
+    }
+
+    // Timer sofort starten
+    updateTimer();
+    // Alle 1 Sekunde aktualisieren
+    setInterval(updateTimer, 1000);
+</script>
+</body>
+</html>
