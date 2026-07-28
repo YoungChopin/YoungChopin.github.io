@@ -1,0 +1,241 @@
+:root {
+  --ink: #23322e;
+  --paper: #faf7f2;
+  --accent: #c1502e;
+  --accent-soft: #2a4d45;
+  --gray: #777;
+  --line: #e2ddd3;
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+.small { color: var(--gray); font-size: 13px; }
+
+#gate {
+  max-width: 320px;
+  margin: 100px auto;
+  padding: 0 16px;
+  font-family: var(--font-body);
+}
+
+#gate label { font-size: 14px; }
+
+#gate input {
+  display: block;
+  margin: 6px 0 12px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  width: 100%;
+  background: #fff;
+}
+
+#gate button {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  background: var(--ink);
+  color: #fff;
+  cursor: pointer;
+}
+
+#gate-error { color: var(--accent); font-size: 13px; margin-top: 8px; }
+
+#app {
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 40px 20px 64px;
+}
+
+header {
+  padding-bottom: 28px;
+  margin-bottom: 36px;
+  border-bottom: 2px solid var(--ink);
+}
+
+header > .small { margin: 0 0 12px; }
+
+#timer {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2px;
+  margin: 8px 0 14px;
+  text-align: center;
+  background: var(--ink);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.timer-unit { padding: 16px 2px 12px; }
+
+.timer-unit span {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--paper);
+}
+
+.timer-unit label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(250, 247, 242, 0.6);
+  margin-top: 4px;
+}
+
+section {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 14px;
+}
+
+#daily-message {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 18px;
+  margin: 0 0 4px;
+}
+
+details { margin-top: 14px; }
+
+details summary {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+textarea {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 14px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #fff;
+}
+
+.message-editor button,
+#message-save {
+  margin-top: 8px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#map {
+  height: 320px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
+#pin-list {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+#pin-list li {
+  font-size: 13px;
+  padding: 5px 12px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#pin-list li::before { content: "●"; color: var(--accent); }
+
+#pin-list button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--gray);
+}
+#pin-list button:hover { color: var(--accent); }
+
+#todo-form { display: flex; gap: 8px; margin-bottom: 18px; }
+
+#todo-form input {
+  flex: 1;
+  padding: 9px 10px;
+  font-size: 14px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #fff;
+}
+
+#todo-form button {
+  padding: 0 18px;
+  border: none;
+  border-radius: 4px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#todo-list { list-style: none; margin: 0; padding: 0; }
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.todo-item input[type="checkbox"] { accent-color: var(--accent); width: 18px; height: 18px; }
+
+.todo-item span { flex: 1; font-size: 14px; }
+
+.todo-item.done span { text-decoration: line-through; color: var(--gray); }
+
+.todo-item .delete-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--gray);
+}
+.todo-item .delete-btn:hover { color: var(--accent); }
+
+footer { padding-top: 28px; text-align: center; }
+
+button:focus-visible, input:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  #timer { grid-template-columns: repeat(3, 1fr); }
+}

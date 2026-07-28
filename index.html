@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FJP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Passwort-Gate -->
+<div id="gate">
+  <form id="gate-form" autocomplete="off">
+    <label for="gate-input">Kennwort</label><br>
+    <input type="password" id="gate-input" autocomplete="off">
+    <button type="submit">Öffnen</button>
+    <p id="gate-error" hidden>Falsches Kennwort.</p>
+  </form>
+</div>
+
+<!-- Hauptinhalt -->
+<div id="app" hidden>
+
+  <header>
+    <p class="small">zusammen seit 19.01.2026, 19:45 Uhr</p>
+    <div id="timer" aria-live="polite">
+      <div class="timer-unit"><span id="t-years">0</span><label>Jahre</label></div>
+      <div class="timer-unit"><span id="t-months">0</span><label>Monate</label></div>
+      <div class="timer-unit"><span id="t-days">0</span><label>Tage</label></div>
+      <div class="timer-unit"><span id="t-hours">0</span><label>Std</label></div>
+      <div class="timer-unit"><span id="t-minutes">0</span><label>Min</label></div>
+      <div class="timer-unit"><span id="t-seconds">0</span><label>Sek</label></div>
+    </div>
+    <p class="small">insgesamt <span id="t-totaldays">0</span> Tage · <span id="t-totalhours">0</span> Std · <span id="t-totalminutes">0</span> Min</p>
+  </header>
+
+  <section>
+    <h2>Nachricht des Tages</h2>
+    <p id="daily-message">&hellip;</p>
+    <p class="small" id="daily-message-date"></p>
+    <details>
+      <summary>Nachricht schreiben</summary>
+      <textarea id="message-input" placeholder="Hehehe"></textarea>
+      <button id="message-save">Speichern</button>
+      <span id="message-status" class="small"></span>
+    </details>
+  </section>
+
+  <section>
+    <h2>Wo wir waren</h2>
+    <p class="small">Klick auf die Karte, um einen Pin zu setzen.</p>
+    <div id="map"></div>
+    <ul id="pin-list"></ul>
+  </section>
+
+  <section>
+    <h2>Liste</h2>
+    <form id="todo-form">
+      <input type="text" id="todo-input" placeholder="Hajo" autocomplete="off">
+      <button type="submit">Hinzufügen</button>
+    </form>
+    <ul id="todo-list"></ul>
+  </section>
+
+
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
